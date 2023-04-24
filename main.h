@@ -5,7 +5,6 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-#define BUFFER_SIZE 1024
 
 /**
  * _putchar - writes the character c to stdout
@@ -34,14 +33,5 @@ int _printf(const char *format, ...);
  */
 void _vprintf(const char *format, va_list args);
 
-
-/**
- * print_buffer - prints what is in the buffer
- * @buffer: the temporary storage in memory
- * which is an array of characters
- * @buffer_index: is the length
- */
-
-void print_buffer(char buffer[], int *buffer_index);
 
 #endif /* main.h */

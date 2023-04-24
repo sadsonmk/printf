@@ -30,7 +30,7 @@ void _vprintf(const char *format, va_list args)
 				case 's':
 					{
 					char *str = va_arg(args, char *);
-					
+
 					while (*str)
 						_putchar(*str++);
 					break;
