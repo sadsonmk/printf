@@ -26,4 +26,12 @@ int _putchar(char c);
 
 int _printf(const char *format, ...);
 
+/**
+ * _vprintf - prints a formatted string
+ * @args: is the list of arguments
+ * Return: void
+ */
+void _vprintf(const char *format, va_list args);
+
+
 #endif /* main.h */
