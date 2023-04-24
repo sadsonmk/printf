@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "main.h"
 
+void print_buffer(char buffer[], int *buffer_index);
+
 /**
  * _printf - produces output according to a format.
  * @format: is a character string
@@ -30,16 +32,34 @@ int _printf(const char *format, ...)
 			{
 				buffer[buffer_index] = format[i];
 				if (buffer_index == BUFFER_SIZE)
-					_vprintf(buffer, arg);
+					print_buffer(buffer, &buffer_index);
 				counter++;
 			}
 			else
 			{
-				_vprintf(buffer, arg);
+				print_buffer(buffer, &buffer_index);
 			}
+
+			format++;
 		}
 	}
+	print_buffer(buffer, &buffer_index);
 	va_end(arg);
 
 	return (counter);
+}
+
+/**
+ * print_buffer - prints what is in the buffer
+ * @buffer: the temporary storage in memory
+ * which is an array of characters
+ * @buffer_index: is the length
+ */
+
+void print_buffer(char buffer[], int *buffer_index)
+{
+	if (*buffer_index > 0)
+		write(1, &buffer[0], *buffer_index);
+
+	buffer_index = 0;
 }
