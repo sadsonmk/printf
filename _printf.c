@@ -32,19 +32,19 @@ int _printf(const char *format, ...)
 			{
 				buffer[buffer_index] = format[i];
 				if (buffer_index == BUFFER_SIZE)
-					print_buffer(buffer, &buffer_index);
+					_vprintf(buffer, arg);
 				counter++;
 			}
 			else
 			{
-				print_buffer(buffer, &buffer_index);
+				_vprintf(buffer, arg);
 				counter++;
 			}
 
 			format++;
 		}
 	}
-	print_buffer(buffer, &buffer_index);
+	_vprintf(buffer, arg);
 	va_end(arg);
 
 	return (counter);
