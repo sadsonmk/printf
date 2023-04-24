@@ -28,15 +28,18 @@ void _vprintf(const char *format, va_list args)
 					_putchar(va_arg(args, int));
 					break;
 				case 's':
-					const char *str = va_arg(args, char *);
-
+					{
+					char *str = va_arg(args, char *);
+					
 					while (*str)
 						_putchar(*str++);
 					break;
+					}
 
 			}
 
 			flag = 0;
+		}
 
 		format++;
 	}

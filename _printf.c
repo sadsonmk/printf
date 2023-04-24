@@ -33,7 +33,13 @@ int _printf(const char *format, ...)
 					_vprintf(buffer, arg);
 				counter++;
 			}
+			else
+			{
+				_vprintf(buffer, arg);
+			}
 		}
-	return (counter);
+	}
 	va_end(arg);
+
+	return (counter);
 }
