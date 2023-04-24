@@ -38,6 +38,7 @@ int _printf(const char *format, ...)
 			else
 			{
 				print_buffer(buffer, &buffer_index);
+				counter++;
 			}
 
 			format++;
