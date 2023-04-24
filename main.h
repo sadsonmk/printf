@@ -1,10 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/* standard library */
 #include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
 
+/* function prototypes */
 
 /**
  * _putchar - writes the character c to stdout
@@ -13,7 +15,6 @@
  * On error -1 is returned
  */
 int _putchar(char c);
-
 
 /**
  * _printf - produces output according to a format.
@@ -26,12 +27,11 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 
 /**
- * _vprintf - prints a formatted string
- * @args: is the list of arguments
- * @format: pointer to an array of chars
- * Return: void
+ * print_str - prints out a string
+ * @str: is the input string
+ * Return: the length of the string printed
  */
-void _vprintf(const char *format, va_list args);
 
+int print_str(char *str);
 
 #endif /* main.h */
