@@ -33,8 +33,7 @@ int _printf(const char *format, ...)
 			int count = print_str(va_arg(args, char *));
 
 			b++;
-			counter += count;
-			break;
+			counter += (count - 1);
 		}
 		else if (format[b + 1] == '%')
 		{
