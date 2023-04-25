@@ -34,4 +34,14 @@ int _printf(const char *format, ...);
 
 int print_str(char *str);
 
+
+/**
+ * print_num - printing numbers
+ * @n: the input
+ * Return: void
+ */
+
+void print_num(int n);
+
+
 #endif /* main.h */

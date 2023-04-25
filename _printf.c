@@ -9,14 +9,13 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int b = 0, counter = 0;
-
+	unsigned int b, counter = 0;
 	va_list args;
 
 	if (format == NULL)
 		return (-1);
 	va_start(args, format);
-	for ( ; format[b] != '\0'; b++)
+	for (b = 0; format[b] != '\0'; b++)
 	{
 		if (format[b] != '%')
 		{
@@ -39,10 +38,14 @@ int _printf(const char *format, ...)
 		{
 			_putchar('%');
 			b++;
+			counter += 1;
 		}
-		counter += 1;
+		else if ((format[b + 1] == 'i') || (format[b + 1] == 'd'))
+		{
+			print_num(va_arg(args, int));
+			b++;
+		}
 	}
-
 	return (counter);
 	va_end(args);
 }
